@@ -46,12 +46,12 @@ const Home = () => {
                 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3'>
                     {searchText ? (
                         <RenderCards
-                        data="seachedResults"
+                        data={[]}
                         title="No search result found"
                         />
                     ) : (
                         <RenderCards
-                        data="allPosts"
+                        data={[]}
                         title="No posts found"
                         />
                     )}
