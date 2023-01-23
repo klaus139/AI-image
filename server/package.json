@@ -6,14 +6,19 @@
   "type": "module",
   "scripts": {
     "start": "nodemon index",
-    "build": "node server.js && cd ../client && npm install && npm run build",
-    "build-client":"cd ../client && npm install && npm run build"
+    "build": "node index.js && cd ../client && npm install && npm run dev",
+    "build-client": "cd ../client && npm install && npm run build",
+    
+    "server": "concurrently \"nodemon index.js\" \"cd client && npm run dev\""
+    
+  
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cloudinary": "^1.33.0",
+    "concurrently": "^7.6.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
