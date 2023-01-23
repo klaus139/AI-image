@@ -23,14 +23,14 @@ app.get('/', async(req, res) => {
   res.send('Hello from dali');
 });
 
-if (process.env.NODE_ENV === "production") {
-    //Set static folder
-    app.use(express.static("../client/dist"));
-}
+// if (process.env.NODE_ENV === "production") {
+//     //Set static folder
+//     app.use(express.static("../client/dist"));
+// }
 
-app.get('/*', function(req, res) {
-    res.sendFile(join(__dirname, "../client/dist/index.html"));
-  });
+// app.get('/*', function(req, res) {
+//     res.sendFile(join(__dirname, "../client/dist/index.html"));
+//   });
 
 const startServer = async () => {
     try{
