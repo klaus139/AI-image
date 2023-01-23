@@ -25,11 +25,11 @@ app.get('/', async(req, res) => {
 
 if (process.env.NODE_ENV === "production") {
     //Set static folder
-    app.use(express.static("../client/dist"));
+    app.use(express.static("../client/build"));
 }
 
 app.get('/*', function(req, res) {
-    res.sendFile(join(__dirname, "../client/dist/index.html"));
+    res.sendFile(join(__dirname, "../client/build/index.html"));
   });
 
 const startServer = async () => {
